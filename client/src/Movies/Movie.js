@@ -49,13 +49,7 @@ function Movie(props) {
       })
   }
 
-  // .then( res => {
-  //   movieList = movies.filter( movie => 
-  //     movie.id !== res.data
-  //   )
-  //   setMovieList(movies)
-  //   history.push('/')
-  //   })
+
 
   const useDeleteMovie = () => {
     deleteMovie(params.id)

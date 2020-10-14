@@ -17,11 +17,9 @@ const AddMovieForm = (props) => {
 
     const handleChanges = (e) => {
         e.persist();
-        //let value = e.target.value;
+
         const { name, value } = e.target;
-        // if (name === 'stars'){
-        //     value = value.split(',');
-        // } 
+
         setValues({
             ...values,
             [name]: value,

@@ -35,10 +35,6 @@ const App = () => {
           <NavLink exact to="/add-movie">
             Add Movie
           </NavLink>
-          {/* <NavLink exact to="/">
-            Home
-          </NavLink>
-          <NavLink to="/item-list">Shop</NavLink> */}
         </div>
       </nav>
 
