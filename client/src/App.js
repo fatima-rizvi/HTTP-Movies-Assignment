@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 
 import AddMovieForm from './AddMovieForm';
 import UpdateForm from './UpdateForm';
@@ -29,6 +29,19 @@ const App = () => {
 
   return (
     <>
+      <nav>
+        <h1 className="store-header">List of Movies</h1>
+        <div className="nav-links">
+          <NavLink exact to="/add-movie">
+            Add Movie
+          </NavLink>
+          {/* <NavLink exact to="/">
+            Home
+          </NavLink>
+          <NavLink to="/item-list">Shop</NavLink> */}
+        </div>
+      </nav>
+
       <SavedList list={savedList} />
 
       <Route exact path="/">
