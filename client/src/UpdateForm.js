@@ -26,7 +26,8 @@ const UpdateForm = (props) => {
     const { push } = useHistory();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/movies/:${id}`)
+        console.log(' get id : ', id)
+        axios.get(`http://localhost:5000/api/movies/${id}`)
             .then((res) => {
                 console.log("Update form get results: ", res);
                 setMovie(res.data);
@@ -37,10 +38,12 @@ const UpdateForm = (props) => {
     }, [])
 
     const handleSubmit = (e) => {
+        console.log("Movie put: ", movie)
         e.preventDefault();
-        axios.put(`http://localhost:5000/api/movies/:${id}`, movie)
+        axios.put(`http://localhost:5000/api/movies/${id}`, movie)
             .then((res) => {
-                props.setMovieList(res.data)
+                console.log("Put result: ", res)
+                props.setMovieList(res)
                 push(`/movies/:${id}`)
             })
             .catch((err) => {
@@ -80,7 +83,7 @@ const UpdateForm = (props) => {
                     onChange = {handleChanges}
                     placeholder = 'Stars'
                 /> */}
-
+                <button>Submit</button>
             </form>
         </div>
     )
